@@ -45,7 +45,7 @@ service:
   port: 8080
 
 ingress:
-  enabled: false
+  enabled: true
   dnsWildcard: development.krci-dev.cloudmentor.academy
   className: ""
   annotations: {}
@@ -77,14 +77,14 @@ resources: {}
 livenessProbe:
   httpGet:
     path: /api/liveness
-    port: 80
+    port: 8080
   initialDelaySeconds: 15
   periodSeconds: 5
   failureThreshold: 3
 readinessProbe:
   httpGet:
     path: /api/readiness
-    port: 80
+    port: 8080
   initialDelaySeconds: 15
   periodSeconds: 5
   failureThreshold: 3
